@@ -1,0 +1,19 @@
+--Exercise 1
+lastDigit     :: Integer -> Integer
+lastDigit num = mod num 10  
+
+dropLastDigit :: Integer -> Integer
+dropLastDigit num = div num 10
+
+--Exercise 2
+toRevDigits :: Integer -> [Integer]
+toRevDigits num
+  | num > 0 = (lastDigit num):(toRevDigits (dropLastDigit num))
+  | otherwise = []
+
+--Exercise 3
+
+
+--Exercise 4
+sumDigits :: [Integer] -> Integer
+sumDigits list = sum (map sum (map toRevDigits list))
