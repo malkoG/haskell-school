@@ -53,3 +53,14 @@ filterCodes m codes = filter (isConsistent m) codes
 
 --Exercise 6
 allCodes :: Int -> [Code]
+allCodes 0 = []
+allCodes 1 = group colors
+allCodes n = concatMap (\x -> (map (\y-> y:x ) colors)) (allCodes (n-1))
+
+--Exercise 7
+--solve :: Code -> [Move]
+--solve c = map (\x -> getMove c x) (allCodes (length c))
+
+
+--Exercise 8
+--solve' :: Code -> [Move]
